@@ -13,8 +13,11 @@ using namespace std;
 
 class Menu {
 public:
-
     void run() {
+        // Store books in a vector
+        vector<string> books;
+
+        // Loop for menu options
         while (true) {
             cout << "Menu Options:" << endl;
             cout << "1. Add a new book" << endl;
@@ -24,13 +27,22 @@ public:
         
             int choice;
             cin >> choice;
-
+            // Handle menu choices
             if (choice == 1) {
-            // WORK IN PROGRESS...
+                cout << "Which book would you like to add? ";
+                string bookTitle;
+                cin >> bookTitle;
+
+                books.push_back(bookTitle);
+                cout << "Book added successfully!" << endl;
+
             } 
             else if (choice == 2) {
-            // WORK IN PROGRESS...
-            } 
+                cout << "Books in your journal:" << endl;
+                for (const string& book : books) {
+                    cout << "- " << book << endl;
+                }
+            }
             else if (choice == 3) {
                 cout << "Exiting MyBookJournal. Goodbye!" << endl;
                 break;
