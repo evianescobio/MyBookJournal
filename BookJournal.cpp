@@ -8,11 +8,32 @@
 
 #include <iostream>
 #include <vector>
-
+#include <string>
 using namespace std;
 
+// Menu class to handle user interactions
 class Menu {
 public:
+    class AddBook {
+    public:
+        void addBook(vector<string>& books) {
+            // Prompt for book details
+            cout << "Which book would you like to add? ";
+            string bookTitle;
+            cin >> bookTitle;
+
+            // Prompt for author details
+            cout << "Who is the author of " << bookTitle << "? ";
+            string author;
+            cin >> author;
+
+            books.push_back(bookTitle + " by " + author);
+            cout << "Book added successfully!" << endl;
+        }
+    };
+
+    AddBook addBook;
+
     void run() {
         // Store books in a vector
         vector<string> books;
@@ -27,14 +48,10 @@ public:
         
             int choice;
             cin >> choice;
+            
             // Handle menu choices
             if (choice == 1) {
-                cout << "Which book would you like to add? ";
-                string bookTitle;
-                cin >> bookTitle;
-
-                books.push_back(bookTitle);
-                cout << "Book added successfully!" << endl;
+                addBook.addBook(books);
 
             } 
             else if (choice == 2) {
@@ -53,6 +70,8 @@ public:
         }
     }
 };
+
+
 
 int main() {
     cout << "== Welcome to MyBookJournal! == \n" << endl;
