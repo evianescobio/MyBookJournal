@@ -20,15 +20,15 @@ public:
             // Prompt for book details
             cout << "Which book would you like to add? ";
             string bookTitle;
-            cin >> bookTitle;
+            getline(cin >> ws, bookTitle);
 
             // Prompt for author details
             cout << "Who is the author of " << bookTitle << "? ";
             string author;
-            cin >> author;
+            getline(cin >> ws, author);
 
             books.push_back(bookTitle + " by " + author);
-            cout << "Book added successfully!" << endl;
+            cout << "Book added successfully!\n\n";
         }
     };
 
@@ -48,7 +48,7 @@ public:
         
             int choice;
             cin >> choice;
-            
+
             // Handle menu choices
             if (choice == 1) {
                 addBook.addBook(books);
@@ -56,9 +56,10 @@ public:
             } 
             else if (choice == 2) {
                 cout << "Books in your journal:" << endl;
-                for (const string& book : books) {
-                    cout << "- " << book << endl;
+                for (int i = 0; i < books.size(); i++) {
+                    cout << i + 1 << "- " << books[i] << endl;
                 }
+                cout << "\n\n";
             }
             else if (choice == 3) {
                 cout << "Exiting MyBookJournal. Goodbye!" << endl;
