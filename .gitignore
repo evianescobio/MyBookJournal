@@ -1,0 +1,69 @@
+# === C++ Build Files ===
+# Object files, compiled binaries, and build artifacts
+*.o
+*.obj
+*.dll
+*.exe
+*.out
+*.app
+*.a
+*.lib
+*.so
+*.pdb
+
+# === Build / Debug Directories ===
+build/
+bin/
+debug/
+release/
+x64/
+x86/
+
+# === VS Code Settings ===
+.vscode/
+.vs/
+*.code-workspace
+
+# === System / OS Files ===
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# === Temporary / Log Files ===
+*.log
+*.tmp
+*.swp
+*.swo
+
+# === Backup / Archive Files ===
+*.bak
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+
+# === Project-Specific ===
+# Ignore compiled program
+BookJournal.exe
+
+# If you use MSYS2 or MinGW temporary folders
+*.stackdump
+
+# === IDE-specific (optional) ===
+# Code::Blocks, CLion, Visual Studio, etc.
+*.cbp
+*.sln
+*.vcxproj
+*.vcxproj.user
+cmake-build-*/
+
+# === Auto-save / cache files ===
+*.cache
+*.sav
